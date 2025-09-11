@@ -5,7 +5,13 @@ Build production software through disciplined, task-based development with conti
 
 ## Project Overview
 
-This is a Python project using the **uv** package manager and workspace structure. The project appears to be focused on multi-agent AI systems using the CrewAI framework, with agents running on different endpoints (EU and USA servers).
+This is a **Global Customer Support Demo** project showcasing multi-site agentic AI collaboration. Built with Python (CrewAI backend) and React TypeScript (frontend), it demonstrates GDPR-compliant customer support across US and EU regions using distributed LLM agents.
+
+**Key Components:**
+- **Multi-Agent Backend**: CrewAI-powered agents on separate US/EU endpoints
+- **Flask API Server**: RESTful backend orchestrating agent collaboration  
+- **React TypeScript Frontend**: Interactive demo with real-time collaboration visualization
+- **GDPR Compliance**: Automatic data sovereignty and consent management
 
 ## Project Structure
 
@@ -16,16 +22,36 @@ This is a Python project using the **uv** package manager and workspace structur
 
 ## Development Commands
 
-### Package Management
+### Demo Launcher (Recommended)
 ```bash
-# Install dependencies and sync environment
+# Start the complete demo system
+python start_demo.py
+```
+
+### Manual Setup
+```bash
+# Backend: Install dependencies and sync environment
 uv sync
 
-# Run the main application
+# Backend: Start API server
+uv run api_server.py
+
+# Frontend: Install and start React app (in new terminal)
+cd frontend
+npm install
+npm start
+```
+
+### Individual Components
+```bash
+# Run original story generation demo
 uv run main.py
 
-# Run from the arqit module
-uv run arqit/main.py
+# Run customer support backend only
+uv run customer_support.py
+
+# Test API endpoints
+uv run api_server.py
 ```
 
 ### Project Management
